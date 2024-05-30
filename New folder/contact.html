@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us</title>
+    <!-- Add the Tailwind CSS CDN link here -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Add your CSS stylesheets here -->
+    <link rel="stylesheet" href="contact.css">
+    <!-- Add your Google Maps API script here -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <!-- Add your JavaScript files here -->
+    <script src="path/to/your-scripts.js"></script>
+</head>
+<body>
+    <header>
+        <nav style="background-color: rgb(255, 255, 255); box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);" class="bg-gray-900 text-white">
+            <div style="color: #000000;" class="container mx-auto px-4">
+                <div class="flex items-center justify-between py-4">
+                    <a href="#" class="text-xl font-bold">
+                        <img src="ManoPro-logos1.png" class="logo-image">
+                    </a>
+        
+                    <div class="flex items-center">
+                        <ul class="flex space-x-4">
+                            <li><a href="test.html" style="color: #000000;" class="hover:text-gray-300">Accueil</a></li>
+                            <li><a href="about.html" style="color: #000000;" class="hover:text-gray-300">À propos</a></li>
+                            <li><a href="#" style="color: #000000;" class="hover:text-gray-300">Services</a></li>
+                            <li><a href="contact.html" style="color: #000000;" class="hover:text-gray-300">Contact</a></li>
+                        </ul>
+        
+                        <a href="#"  class="ml-4 bg-indigo-500 hover:bg-indigo-700 text-white py-2 px-4 rounded-btn">TÉLÉCHARGEZ L'APPLICATION</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+    </header>
+
+    
+    <section class="contact py-20">
+        <div class="container mx-auto">
+            <div class="flex flex-wrap">
+                <div class="w-full md:w-1/2">
+                    <h2 class="text-2xl font-bold mb-4">Nous Contacter</h2>
+                    <form class="mb-8">
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+                                Nom
+                            </label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Entrez votre nom">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                                Email
+                            </label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Entrez votre adresse e-mail">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="message">
+                                Message
+                            </label>
+                            <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" rows="6" placeholder="Entrez votre message"></textarea>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <button class="bg-indigo-500 hover:bg-indigo-700 text-white py-2 px-4 rounded" type="submit">
+                                Envoyer le message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <div id="map" class="h-96"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="bg-gray-900 text-white py-4">
+        <p class="text-center">&copy; 2023 Your Company. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        function initMap() {
+            // Add your map initialization code here
+        }
+    </script>
+</body>
+</html>

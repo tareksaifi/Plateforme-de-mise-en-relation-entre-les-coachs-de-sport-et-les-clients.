@@ -1,0 +1,88 @@
+/* Main container */
+.main {
+    width: 80%;
+    max-width: 600px;
+    margin: 45px auto;
+    padding: 20px;
+    box-shadow: 1px 1px 10px silver;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+/* Heading */
+h2 {
+    font-family: 'Cairo', sans-serif;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Input fields */
+input {
+    margin-bottom: 15px;
+    width: calc(100% - 22px); /* Adjust for padding and border */
+    padding: 10px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Button */
+button {
+    border: none;
+    padding: 10px;
+    width: 100%;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: #1AC15C;
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #17a450;
+}
+
+/* Label */
+label {
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: #1F87CF;
+    font-family: 'Cairo', sans-serif;
+    color: #fff;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 90px;
+}
+
+/* Anchor */
+a {
+    text-decoration: none;
+    font-size: 20px;
+    color: tomato;
+    font-family: 'Cairo', sans-serif;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .main {
+        width: 90%;
+        padding: 15px;
+    }
+
+    button {
+        width: 100%;
+    }
+}

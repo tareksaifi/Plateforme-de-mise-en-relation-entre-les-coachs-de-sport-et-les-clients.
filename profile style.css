@@ -1,0 +1,36 @@
+* {margin: 0;padding: 0;}
+
+body{font-family: 'Montserrat', sans-serif;}
+
+#page {
+    margin-top: 3%;
+
+    min-height: 200px;
+    width: 60%;
+    min-width: 600px;
+    background: whitesmoke;
+    margin: 50px auto;
+    padding: 30px;
+    color: #27aae1;
+}
+
+
+.photo {
+    width: 15%;
+    min-width: 130px;
+    float: left;
+    margin-right: 20px;
+}
+
+.contact-info-box {
+    width: 70.9%;
+    display: inline-block;
+}
+
+.name {
+    margin-bottom: -5px;
+}
+.job-title {
+    display: inline-block;
+}
+
