@@ -66,7 +66,7 @@ require 'userlogin1.php';
             <button name="submit" value="submit" type="submit" class="submit-btn">Se connecter</button>
             <p class="form-message">Vous n'avez pas de compte? <a href="AA.php">Inscrivez-vous</a></p>
             <p class="form-message"><a href="reset_password1.php">Mot de passe oublié?</a></p>
-            <p class="form-message"><a style="color: #fc9938;" href="AAB1.php">Vous etes un technicien?</a></p>
+            <p class="form-message"><a style="color: #fc9938;" href="AAB1.php">Vous etes un Coach?</a></p>
             <p class="form-message" ><a style="color:#0083FD" href="content7 copy.php">Continue sans Connexion</a></p>
 
 

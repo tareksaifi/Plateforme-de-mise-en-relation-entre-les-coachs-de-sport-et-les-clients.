@@ -59,7 +59,7 @@ require 'userreg1.php';
             </div>
             <div class="form-group">
                 <label for="dropdown1">Wilaya</label>
-                <select name="wilayas" id="wilayas" required>
+                <select name="wilayas" id="wilayas" >
                     <option selected disabled>Wilayas</option>
                     <?php
                                          $conn = mysqli_connect('localhost', 'root', '', 'craft2');
@@ -71,27 +71,11 @@ require 'userreg1.php';
                                          ?>
                     </select>
                 </div>
-                <div class="form-group">
-                <label for="dropdown2">Region</label>
-                <select name="communes" id="communes" required></select>
+              <div class="form-group">
+    <label for="dropdown2">Region</label>
+    <input type="text" name="communes" id="communes" class="form-control">
+</div>
 
-<script>
-$('#wilayas').on('change', function () {
-var wilaya_id = this.value;
-$.ajax({
-url: 'state.php',
-type: "POST",
-data: {
-wilaya_data: wilaya_id
-},
-success: function (result) {
-$('#communes').html(result);
-}
-})
-});
-</script>
-
-                </div>
                 <button name="submit" value="submit" type="submit" class="submit-btn">S'inscrire</button>
                 <p class="form-message">Vous êtes déjà inscrit ? <a href="AAB.php">Connectez-vous</a></p>
                 </form>

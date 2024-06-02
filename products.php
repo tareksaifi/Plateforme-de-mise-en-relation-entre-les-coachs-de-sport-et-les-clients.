@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>products</title>
+    <title>Produits</title>
     <style>
         h3 {
             font-family: 'Cairo', sans-serif;
@@ -33,7 +33,7 @@
 </head>
 <body>
     <center>
-        <h3> جميع المنتجات </h3>
+        <h3>Tous les produits</h3>
     </center>
     <?php
     include('profig.php');
@@ -47,8 +47,8 @@
                     <div class='card-body'>
                         <h5 class='card-title'>$riw[name]</h5>
                         <p class='card-text'>$riw[price]</p>
-                        <a href='#' class='btn btn-danger'>حدف المنتج</a>
-                        <a href='#' class='btn btn-primary'>تعديل المنتج</a>
+                        <a href='#' class='btn btn-danger'>Supprimer le produit</a>
+                        <a href='#' class='btn btn-primary'>Modifier le produit</a>
                     </div>
                 </div>
             </main>

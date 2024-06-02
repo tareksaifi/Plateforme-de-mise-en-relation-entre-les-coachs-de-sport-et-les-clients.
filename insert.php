@@ -6,6 +6,7 @@ if (isset($_POST['upload'])) {
     $NAME = $_POST['name'];
     $PRICE = $_POST['price'];
     $IMAGE = $_FILES['image'];
+    $des=$_POST['description'];
     $image_location = $_FILES['image']['tmp_name'];
     $image_name = $_FILES['image']['name'];
 
@@ -25,7 +26,7 @@ if (isset($_POST['upload'])) {
     }
 
     // Insert data into the database
-    $insert = "INSERT INTO prod (name, price, image) VALUES ('$NAME', '$PRICE', '$image_up')";
+    $insert = "INSERT INTO prod (name,description, price, image) VALUES ('$NAME','$des', '$PRICE', '$image_up')";
     if (mysqli_query($pro, $insert)) {
         // Move uploaded file to target directory
         if (move_uploaded_file($image_location, $image_up)) {

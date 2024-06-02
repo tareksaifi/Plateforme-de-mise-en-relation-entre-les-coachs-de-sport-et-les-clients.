@@ -1,60 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>food</title>
-    <link rel="stylesheet" href="food.css">
-    <header>
-        <div class="navbar">
-            <div class="logo"><a href="home.html"
-                    style="text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5); font: weight 800;"><span
-                        class="dw-blue">Food</span> pour tout le monde</a></div>
-            <ul class="links">
-                <li><a href="content7 copy.php">Home</a></li>
-                <li><a href="protien_home.php">protin</a></li>
-                <li><a href="food.html">food</a></li>
-            </ul>
-           
-        </div>
-        <div class="dropdown_menu">
-            <li><a href="home.html">Home</a></li>
-            <li><a href="hotels.html">protin</a></li>
-            <li><a href="food.html">food</a></li>
-            <li><a href="#" class="action_btn">Sign up</a></li>
-        </div>
-    </header>
-    <script>
-        const toggleBtn = document.querySelector('.toggle_btn')
-        const toggleBtnIcon = document.querySelector('.toggle_btn i')
-        const DropDownMenu = document.querySelector('.dropdown_menu')
-        toggleBtn.onclick = function () {
-            DropDownMenu.classList.toggle('open')
-            const isOpen = DropDownMenu.classList.contains('open')
-            toggleBtnIcon.classList = isOpen
-                ? 'fa-solid fa-xmark'
-                : 'fa-solid fa-bars'
-        }
-    </script>
-</head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-<body style="background: url('images/food/food.jpg') no-repeat center center fixed; background-size: cover; background-color: #f0f0f0;">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Page</title>
+  <link rel="stylesheet" href="food.css">
+</head>
+<body>
+  <div class="main-content">
+    <div class="slogan">
+      <h1>Une cuisine délicieuse vous attend</h1>
+      <p>Découvrez notre large gamme appétissante</p>
+    </div>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search for your favorite dish...">
+        <button type="button" onclick="search()">Search</button>
+        
+    </div>
+  </div>
+  <script>
+    function search() {
+      var input, filter, foods, foodContainer, h5, i, txtValue;
+      input = document.getElementById('searchInput');
+      filter = input.value.toUpperCase();
+      foods = document.getElementsByClassName('food-contenent');
+      
+      for (i = 0; i < foods.length; i++) {
+        foodContainer = foods[i].getElementsByClassName('col-contenent')[0];
+        h5 = foodContainer.getElementsByTagName('h5')[0];
+        txtValue = h5.textContent || h5.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          foods[i].style.display = '';
+        } else {
+          foods[i].style.display = 'none';
+        }
+      }
+    }
+    </script>
     
-    <div class="food" >
-        <div class="title">
-            <h2 style="margin-top: 18%;">Food : </h2>
-            <br>
-        </div>
         <!-- apple -->
         <div class="food-contenent">
             <div class="col-contenent">
                 <img src="images/food/Apple.jpg" alt="Apples">
-                <h5>Apples</h5>
+                <h5>Pommes</h5>
                 <br>
                 <div class="paragraph">
                     Calories : 95. <br>
@@ -70,7 +60,7 @@
         <div class="food-contenent">
             <div class="col-contenent">
                 <img src="images/food/dattes séchées.jpg" alt="dattes séchées">
-                <h5>dattes séchées</h5>
+                <h5>Dattes séchées</h5>
                 <br>
                 <div class="paragraph">
                     Calories : 110 <br>
@@ -86,8 +76,8 @@
       
             <div class="food-contenent">
                 <div class="col-contenent">
-                    <img src="images/food/ORANGE.jpg" alt="orange">
-                    <h5>ORANGE</h5>
+                    <img src="images/food/i102115-orange-nu.webp" alt="orange">
+                    <h5>Orange</h5>
                     <br>
                     <div class="paragraph">
                         Énergie 72,4 calories<br>
@@ -102,7 +92,7 @@
             <div class="food-contenent">
                 <div class="col-contenent">
                     <img src="images/food/avocat.jpg" alt="avocat">
-                    <h5>avocat</h5>
+                    <h5>Avocat</h5>
                     <br>
                     <div class="paragraph">
                         L'acide corporel actuel équivaut à 81 microgrammes.<br>
@@ -145,7 +135,7 @@
         
             <div class="food-contenent">
                 <div class="col-contenent">
-                    <img src="images/food/oeuf.jpg" alt="oeuf">
+                    <img src="images/food/eggs-1-jpg1.webp" alt="oeuf">
                     <h5>oeuf</h5>
                     <br>
                     <div class="paragraph">
@@ -181,8 +171,8 @@
 
             <div class="food-contenent">
                 <div class="col-contenent">
-                    <img src="images/food/blanc de poulet.jpg" alt="blanc de poulet">
-                    <h5>blanc de poulet</h5>
+                    <img src="images/food/0010-cuisses-poulet-cinq-epices.webp" alt="blanc de poulet">
+                    <h5>Poulet</h5>
                     <br>
                     <div class="paragraph">
                        
@@ -216,7 +206,7 @@
 
             <div class="food-contenent">
                 <div class="col-contenent">
-                    <img src="images/food/Foie de poulet.jpg" alt="Foie de poulet">
+                    <img src="images/food/i180123-shutterstock-1850194483.webp" alt="Foie de poulet">
                     <h5>Foie de poulet</h5>
                     <br>
                     <div class="paragraph">
@@ -313,7 +303,7 @@
 
             <div class="food-contenent">
                 <div class="col-contenent">
-                    <img src="images/food/maïs.jpg" alt="maïs">
+                    <img src="images/food/maïs_flickr_5646763233_95fe7e582e_b.webp" alt="maïs">
                     <h5>maïs</h5>
                     <br>
                     <div class="paragraph">
@@ -329,7 +319,7 @@
 
             <div class="food-contenent">
                 <div class="col-contenent">
-                    <img src="images/food/épinard.jpg" alt="épinard">
+                    <img src="images/food/i102037-epinard-nu.webp" alt="épinard">
                     <h5>épinard</h5>
                     <br>
                     <div class="paragraph">
@@ -361,7 +351,7 @@
             </div>
             <div class="food-contenent">
                 <div class="col-contenent">
-                    <img src="images/food/laitue.jpg" alt="laitue">
+                    <img src="images/food/laitue_249162988.webp" alt="laitue">
                     <h5>laitue</h5>
                     <br>
                     <div class="paragraph">
@@ -492,7 +482,7 @@
             </div>
             <div class="food-contenent">
                 <div class="col-contenent">
-                    <img src="images/food/Haricots;.webp" alt="Haricots">
+                    <img src="images/food/haricots-verts-produits-AdobeStock_263469055.webp" alt="Haricots">
                     <h5>Haricots</h5>
                     <br>
                     <div class="paragraph">
@@ -531,7 +521,7 @@
             </div>
             <div class="food-contenent">
                 <div class="col-contenent">
-                    <img src="images/food/Haricots blancs.jpg" alt="Haricots blancs">
+                    <img src="images/food/haricots-blancs-idees-recettes.webp" alt="Haricots blancs">
                     <h5>Haricots blancs</h5>
                     <br>
                     <div class="paragraph">
@@ -554,39 +544,23 @@
     <div class="footer">
         <div class="container-footer">
             <div class="row-footer">
+                
                 <div class="footer-col">
-                    <h4>Agancy</h4>
+                    <h4>Nous services</h4>
                     <ul>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="tour.html">Our tours</a></li>
-                        <li><a href="#">Privacy Police</a></li>
-                        <li><a href="contact_page.html">Contact us</a></li>
+                        <li><a href="protien_home.php">Magasin du Protiene</a></li>
+                        <li><a href="content7 copy.php">Reserver un coach</a></li>
+                        
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4>get help</h4>
-                    <ul>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Tour Status</a></li>
-                        <li><a href="#">Payment issue</a></li>
-                        <li><a href="help.html">Technical Probleme</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Join us</h4>
-                    <ul>
-                        <li><a href="#">Become Tour operateur</a></li>
-                        <li><a href="#">Support us</a></li>
-                        <li><a href="#">Donation</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Socila Media</h4>
+               
+                <div style="margin-left: 40%;" class="footer-col">
+                    <h4>Réseaux sociaux</h4>
                     <div class="social-link">
-                        <a href="https://www.facebook.com/anis.smira25"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://web.telegram.org/k/#@anis_sm25"><i class="fab fa-telegram"></i></a>
+                        <a href=""><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://web.telegram.org/k/"><i class="fab fa-telegram"></i></a>
                         <a href=""><i class="fab fa-twitter"></i></a>
-                        <a href="https://wa.me/qr/APUM5NMAGJURL1"><i class="fab fa-whatsapp"></i></a>
+                        <a href=""><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
             </div>
@@ -594,5 +568,4 @@
     </div>
 
 </body>
-
 </html>

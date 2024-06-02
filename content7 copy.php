@@ -20,6 +20,7 @@ exit;
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <link rel="stylesheet" href="content7.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <!-- Bootstrap Icons CSS -->
@@ -27,7 +28,7 @@ exit;
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xS30JIcQ0cyHFrVwY9IKMoM1Ug3bJkzzJXojPPlxBG3ovk3YnBN12RGWw3C9iW2H" crossorigin="anonymous"></script>
-  <title>ManoPro</title>
+  <title>Sport pour tous</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
  
 </head>
@@ -59,19 +60,18 @@ exit;
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
       <a class="navbar-brand logo" href="#">
-        <span class="mano">Mano</span><span class="pro">Pro</span>
+        <span class="mano">Sport</span><span class="pro">Pour tous</span>
       </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-<style></style>
-          <a class="nav-link" href="mailto:manopro.service@gmail.com">Contact</a>
+
 
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-          <a class="nav-link" href="mailto:manopro.service@gmail.com">Contact</a>
+          <a class="nav-link" href="mailto:sport.service@gmail.com">Contact</a>
 
           </li>
           <?php
@@ -111,7 +111,7 @@ if (session_status() == PHP_SESSION_NONE) {
             </a>
         </div>
         <div class="carousel-item">
-            <a href="protin.php">
+            <a href="protien_home.php">
                 <img src="images/whey and creatine and chikar.jpg" class="d-block w-100" alt="Ad 2">
             </a>
         </div>
@@ -149,25 +149,12 @@ if (session_status() == PHP_SESSION_NONE) {
         <select class="form-select" name="categorie">
           <option value="" label="Select" selected disabled >Categorie</option>
                 
-                <option >Transport et chauffeurs</option>
-                <option >Agents polyvalents</option>
-                <option >Mécanicien</option>
-                <option >Industrie & Production</option>
-                <option >Bureautique & Secretariat</option>
-                <option >Commerce & Vente</option>
-                <option >Agents polyvalents</option>
-                <option>Eléctronique & Téchnique</option>
-                <option >Securité</option>
-                <option >Electricien auto</option>
-                <option >Electricien batiment</option>
-                <option >Plombier</option>
-                <option >Paintre</option>
-                <option >Menuisier</option>
-                <option >Soudeur</option>
-                <option >Maçon</option>
-                <option>Menuisier aluminium </option>
-                <option >Verrier</option>
-                <option >Chef cuisinier</option>
+          <option value="Karate">Karate</option>
+                <option value="Fitness">Fitness</option>
+                <option value="Yoga">Yoga</option>
+               <option value="CrossFit">CrossFit</option>
+        <option value="Boxe">Boxe</option>
+        <option value="Natation">Natation</option>
         </select>
       </div>
      
@@ -306,10 +293,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $fullName = $row['full_name'];
     $jobTitle = $row['experience'];
     $description = $row['skills'];
+    $specialties = $row['specialties'];
+  $userId = $row['id']; // Get user ID for reporting
+
+    
     $profilePicture = $row['pp']; // Assuming the column name is 'profile_picture'
     $coverPicture = $row['pp']; // Assuming the column name is 'cover_picture'
     $phoneNumber = $row['number']; // Assuming the column name is 'phone_number'
-
+    $instagram= $row['instagram'];
     echo '<div style="margin-left:0.3%;margin-top:0.3%" class="card">';
     echo '<div class="cover-image">';
     echo '<img src="uploads/' . $coverPicture . '" alt="Cover Image">';
@@ -319,13 +310,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo '</div>';
 
     echo '<div class="content">';
-    echo '<h3 class="name">' . $fullName . '</h3>';
-    echo '<p class="username">@Jackson</p>';
+    echo '<h3 class="name">' . $fullName . ' </h3>';
+  
+    echo '<p class="username">' .$specialties. '</p>';
 
     echo '<p class="details">';
     echo $description;
     echo '</p>';
-
+    if (!empty($instagram)) {
+      $instagramUrl = 'https://www.instagram.com/' . htmlspecialchars($instagram);
+      echo '<p class="instagram">';
+      echo '<a href="' . $instagramUrl . '" target="_blank" style="text-decoration: none; color: inherit;">';
+      echo '<i class="fab fa-instagram"></i>';
+      echo '</a>';
+      echo '</p>';
+  }
+  
     echo '<a  href ="profile2.php?id='.$row['id'].'" class="effect effect-4" href="#">';
     echo 'Profil';
     echo '</a>';
@@ -334,12 +334,59 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo '<a class="call-link" href="tel:' . $phoneNumber . '">';
     echo 'Appeler';
     echo '</a>';
-
+    echo'<style>
+    .report-button {
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        margin-left: 10px;
+        cursor: pointer;
+        border-radius: 4px;
+        font-size: 12px;
+    }
+    
+    .report-button:hover {
+        background-color: #c82333;
+    }
+    </style>
+    <button class="report-button" data-user-id="' . $userId . '">Report</button>';
     echo '</div>';
     echo '</div>';
   }
 }
 ?>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.report-button').forEach(function (button) {
+    button.addEventListener('click', function () {
+      const userId = this.getAttribute('data-user-id');
+      
+      if (confirm('Are you sure you want to report this user?')) {
+        fetch('report_user.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ userId: userId })
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            alert('User reported successfully.');
+          } else {
+            alert('Failed to report user.');
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+      }
+    });
+  });
+});
+</script>
+
 
 </div>
 
@@ -366,9 +413,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <div class="row">
         <div class="col-md-4">
           <h5><div class="logo">
-  <span class="mano">Mano</span><span class="pro">Pro</span>
+  <span class="mano">Sport</span><span class="pro">Pour tous</span>
 </div></h5>
-          <p>ManoPro est un startup algerien crée en 2023 consite a facileter la communication entre les technicien les travailleur manuels et les client pour des projet ou des taches speciale. </p>
+          <p>Le site Web est une plateforme qui facilite la mise en relation entre les clients et les coachs. Les clients peuvent trouver des coachs qualifiés dans divers domaines tels que le fitness, le yoga, la boxe, le karaté et la natation, selon leurs besoins. Les coachs présentent leurs services et leur expertise, permettant aux clients de réserver facilement des séances adaptées à leurs objectifs de santé et de bien-être.</p>
         </div>
      
         <div class="col-md-4">
@@ -380,14 +427,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               <br> BP.12, Annaba 23000
               Algerie
             </li>
-            <li><i class="bi bi-envelope-fill"></i> ManoPro.service@gmail.com</li>
+            <li><i class="bi bi-envelope-fill"></i> Sport.service@gmail.com</li>
             <li><i class="bi bi-phone-fill"></i> Département d'Informatique</li>
           </ul>
         </div>
       </div>
       <div class="row mt-4">
         <div class="col text-center">
-          <p>&copy;2023 ManoPro. Tous les droits sont réservés.</p>
+          <p>&copy;2023 Sport pour tous. Tous les droits sont réservés.</p>
         </div>
       </div>
     </div>
